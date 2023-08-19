@@ -3,20 +3,20 @@ import Image from "next/image";
 
 import { Button } from "./ui/button";
 
-import { ProjectsConfig } from "@/config/projects";
+import { Project } from "@/config/projects";
 import { cn } from "@/lib/utils";
 
 type Props = {
-  projectsConfig: ProjectsConfig;
+  projects: Record<string, Project>;
 };
 
-const ProjectsList = ({ projectsConfig }: Props) => {
-  const projectConfigKeys = Object.keys(projectsConfig);
+const ProjectsList = ({ projects }: Props) => {
+  const projectConfigKeys = Object.keys(projects);
 
   return (
     <>
       {projectConfigKeys.map((key) => {
-        const project = projectsConfig[key as keyof typeof projectsConfig];
+        const project = projects[key as keyof typeof projects];
         return (
           <>
             <div

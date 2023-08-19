@@ -4,79 +4,63 @@ import {
   useBrainMockupIphone,
   westLagoonMockupIpad,
   teamSpaceMockupIphone,
+  teamSpaceManageAssignee,
+  teamSpaceTicketInformation,
 } from "@/public/images";
 
-type ProjectConfig = {
+export type Project = {
   title: string;
   description: string;
   fullSpan?: true;
   homeImageDisplay: StaticImageData;
   mobileImageDisplay?: StaticImageData;
   href: string;
+  heroImage?: StaticImageData;
+  techStack?: Array<{ label: string; tech: string }>;
+  links?: Array<{ label: string; link: string }>;
+  gallery?: GalleryItem[];
 };
 
-export type ProjectsConfig = {
-  teamSpace: ProjectConfig;
-  useBrain: ProjectConfig;
-  westLagoon: ProjectConfig;
+export type GalleryItem = {
+  img: StaticImageData;
+  fullSpan?: true;
 };
 
-export const projectsConfig: ProjectsConfig = {
-  teamSpace: {
+export const projects: Record<string, Project> = {
+  "team-space": {
     title: "Team Space",
     description:
       "A collaborative project management app that boosts teamwork and oversight. It offers secure authentication, user roles, and streamlined ticket management for efficient workflows and effective project development.",
     fullSpan: true,
     homeImageDisplay: teamSpaceMockupMac,
     href: "team-space",
+    heroImage: teamSpaceMockupMac,
+    techStack: [
+      { label: "Frontend", tech: "NextJS" },
+      { label: "Backend", tech: "Django" },
+      { label: "Database", tech: "PostgreSQL" },
+      { label: "Styling", tech: "Tailwind" },
+    ],
+    links: [
+      { label: "Figma", link: "/" },
+      { label: "Github", link: "/" },
+    ],
+    gallery: [
+      { img: teamSpaceMockupIphone },
+      { img: teamSpaceManageAssignee },
+      { img: teamSpaceTicketInformation, fullSpan: true },
+    ],
   },
-  useBrain: {
+  "use-brain": {
     title: "Usebrain",
-    description:
-      "Interactive quiz platform that enables users to create, participate in, and manage quizzes while keeping track of their progress. The platform offers a personalized dashboard, lesson creation, quiz exploration, and post-quiz analytics.",
+    description: "Interactive quiz platform...",
     homeImageDisplay: useBrainMockupIphone,
     href: "use-brain",
   },
-  westLagoon: {
+  "west-lagoon": {
     title: "West Lagoon",
-    description:
-      "A platform for exploring a diverse range of luxury properties. Users can effortlessly access details about various villas, including pricing, photographs, available amenities, and locations.",
+    description: "A platform for exploring...",
     homeImageDisplay: westLagoonMockupIpad,
     href: "west-lagoon",
-  },
-};
-
-export const projectsDetailConfig = {
-  "team-space": {
-    ...projectsConfig.teamSpace,
-    heroImage: teamSpaceMockupMac,
-    techStack: [
-      {
-        label: "Frontend",
-        tech: "NextJS",
-      },
-      {
-        label: "Backend",
-        tech: "Django",
-      },
-      {
-        label: "Database",
-        tech: "PostgreSQL",
-      },
-      {
-        label: "Styling",
-        tech: "Tailwind",
-      },
-    ],
-    links: [
-      {
-        label: "Figma",
-        link: "/",
-      },
-      {
-        label: "Github",
-        link: "/",
-      },
-    ],
   },
 };

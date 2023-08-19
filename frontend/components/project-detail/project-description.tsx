@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+
 import { Button } from "@/components/ui/button";
-import { projectsDetailConfig } from "@/config/projects";
+
+import { Project } from "@/config/projects";
 
 type Props = {
-  project: (typeof projectsDetailConfig)["team-space"];
+  project: Project;
 };
 
 const ProjectDescription = ({ project }: Props) => {
@@ -13,7 +15,7 @@ const ProjectDescription = ({ project }: Props) => {
       <div className="flex gap-8 ">
         <h1 className="font-bold">{project.title}</h1>
         <div className="flex gap-8 ml-auto">
-          {project.links.map((link) => (
+          {project.links!.map((link) => (
             <Link
               className="underline text-muted-foreground underline-offset-2 hover:text-foreground transition-colors duration-300 ease-in-out"
               href={link.link}
@@ -28,7 +30,7 @@ const ProjectDescription = ({ project }: Props) => {
 
       <div className="aspect-video bg-zinc-100 px-8 py-16">
         <Image
-          src={project.heroImage}
+          src={project.heroImage!}
           alt={project.title}
           className=" object-contain sm:max-w-full"
           sizes="100vw"

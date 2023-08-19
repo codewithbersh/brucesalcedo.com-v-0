@@ -4,7 +4,7 @@ import { PageWrapper } from "@/components/page-wrapper";
 import { ProjectsList } from "@/components/projects-list";
 import { Button } from "@/components/ui/button";
 
-import { projectsConfig } from "@/config/projects";
+import { projects } from "@/config/projects";
 
 const HomePage = () => {
   return (
@@ -33,7 +33,7 @@ const HomePage = () => {
           <Button variant="ghost">Read.cv</Button>
         </div>
       </section>
-      <ProjectsList projectsConfig={projectsConfig} />
+      <ProjectsList projects={projects} />
     </PageWrapper>
   );
 };
