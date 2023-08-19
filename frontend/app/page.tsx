@@ -11,7 +11,7 @@ const HomePage = () => {
     <PageWrapper>
       <section className="col-span-full space-y-8 md:col-span-6">
         <div>
-          <h1>Bruce Salcedo</h1>
+          <h1 className="font-bold">Bruce Salcedo</h1>
           <p className="italic text-muted-foreground">Web Developer</p>
           <br />
           <p className="max-w-prose">

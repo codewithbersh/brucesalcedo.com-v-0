@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-
-import "@/styles/globals.css";
 import { Raleway } from "next/font/google";
+
 import { SiteHeader } from "@/components/site-header";
+import SiteFooter from "@/components/site-footer";
+
 import { cn } from "@/lib/utils";
+import "@/styles/globals.css";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -26,10 +28,9 @@ export default function RootLayout({
           "min-h-screen bg-background antialiased pt-[48px]"
         )}
       >
-        <div>
-          <SiteHeader />
-          {children}
-        </div>
+        <SiteHeader />
+        <div>{children}</div>
+        <SiteFooter />
         {/* <Analytics /> */}
       </body>
     </html>
