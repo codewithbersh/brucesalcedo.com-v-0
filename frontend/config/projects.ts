@@ -28,7 +28,6 @@ export const projectsConfig: ProjectsConfig = {
       "A collaborative project management app that boosts teamwork and oversight. It offers secure authentication, user roles, and streamlined ticket management for efficient workflows and effective project development.",
     fullSpan: true,
     homeImageDisplay: teamSpaceMockupMac,
-    mobileImageDisplay: teamSpaceMockupIphone,
     href: "team-space",
   },
   useBrain: {
@@ -44,5 +43,40 @@ export const projectsConfig: ProjectsConfig = {
       "A platform for exploring a diverse range of luxury properties. Users can effortlessly access details about various villas, including pricing, photographs, available amenities, and locations.",
     homeImageDisplay: westLagoonMockupIpad,
     href: "west-lagoon",
+  },
+};
+
+export const projectsDetailConfig = {
+  "team-space": {
+    ...projectsConfig.teamSpace,
+    heroImage: teamSpaceMockupMac,
+    techStack: [
+      {
+        label: "Frontend",
+        tech: "NextJS",
+      },
+      {
+        label: "Backend",
+        tech: "Django",
+      },
+      {
+        label: "Database",
+        tech: "PostgreSQL",
+      },
+      {
+        label: "Styling",
+        tech: "Tailwind",
+      },
+    ],
+    links: [
+      {
+        label: "Figma",
+        link: "/",
+      },
+      {
+        label: "Github",
+        link: "/",
+      },
+    ],
   },
 };

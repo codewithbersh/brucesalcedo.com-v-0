@@ -1,10 +1,16 @@
 import Link from "next/link";
 
 import { socialsConfig } from "@/config/socials";
+import { ComponentProps } from "react";
+import { cn } from "@/lib/utils";
 
-const SiteFooter = () => {
+type Props = ComponentProps<"footer"> & {
+  className?: string;
+};
+
+const SiteFooter = ({ className, ...props }: Props) => {
   return (
-    <footer className="container ">
+    <footer className={cn("container", className)} {...props}>
       <div className="border-t py-12 space-y-8">
         <div className="flex flex-col gap-2">
           <p className="max-w-prose">

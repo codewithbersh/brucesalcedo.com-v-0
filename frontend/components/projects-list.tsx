@@ -36,7 +36,7 @@ const ProjectsList = ({ projectsConfig }: Props) => {
                 href={`/projects/${project.href}`}
                 passHref
               >
-                <div className="bg-zinc-100 aspect-square py-8 group overflow-hidden">
+                <div className="bg-zinc-100 aspect-square py-8 group overflow-hidden px-8 grid place-items-center md:place-items-start md:block">
                   <Image
                     src={
                       project.mobileImageDisplay
@@ -45,7 +45,7 @@ const ProjectsList = ({ projectsConfig }: Props) => {
                     }
                     alt={project.title}
                     sizes="100vw"
-                    className="object-contain max-h-full group-hover:scale-[102%] transition-all duration-300 ease-in-out"
+                    className="object-contain max-h-full group-hover:scale-[102%] transition-all duration-300 ease-in-out "
                   />
                 </div>
               </Link>

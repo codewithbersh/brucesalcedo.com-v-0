@@ -25,12 +25,12 @@ export default function RootLayout({
       <body
         className={cn(
           raleway.className,
-          "min-h-screen bg-background antialiased pt-[48px]"
+          "min-h-screen bg-background antialiased pt-[48px] flex flex-col"
         )}
       >
         <SiteHeader />
         <div>{children}</div>
-        <SiteFooter />
+        <SiteFooter className="mt-auto" />
         {/* <Analytics /> */}
       </body>
     </html>
