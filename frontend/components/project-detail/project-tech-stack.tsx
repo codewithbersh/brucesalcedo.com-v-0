@@ -14,7 +14,7 @@ const ProjecTechStack = ({ techStack }: Props) => {
       <Separator orientation="vertical" className="hidden sm:block" />
       <div className="flex gap-6 flex-col sm:flex-row sm:gap-x-24 sm:gap-y-6 flex-wrap">
         {techStack.map((tech) => (
-          <div>
+          <div key={tech.tech}>
             <p className="text-muted-foreground">{tech.label}</p>
             <h1 className="font-bold">{tech.tech}</h1>
           </div>
