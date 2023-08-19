@@ -3,6 +3,8 @@ import { Analytics } from "@vercel/analytics/react";
 
 import "@/styles/globals.css";
 import { Raleway } from "next/font/google";
+import { SiteHeader } from "@/components/site-header";
+import { cn } from "@/lib/utils";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -18,9 +20,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={raleway.className}>
-        {children}
-        <Analytics />
+      <body
+        className={cn(
+          raleway.className,
+          "min-h-screen bg-background antialiased pt-[48px]"
+        )}
+      >
+        <div>
+          <SiteHeader />
+          {children}
+        </div>
+        {/* <Analytics /> */}
       </body>
     </html>
   );
