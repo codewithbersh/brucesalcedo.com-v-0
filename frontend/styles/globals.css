@@ -68,12 +68,12 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border  leading-loose;
   }
   body {
     @apply bg-background text-foreground;
   }
   .container {
-    @apply max-w-screen-xl !px-4 sm:!px-8;
+    @apply !max-w-5xl !px-4 sm:!px-8;
   }
 }
