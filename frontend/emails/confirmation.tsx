@@ -1,95 +1,76 @@
 import {
   Body,
+  Button,
   Container,
+  Column,
   Head,
   Heading,
+  Hr,
   Html,
   Img,
   Link,
   Preview,
+  Row,
+  Section,
+  Tailwind,
   Text,
 } from "@react-email/components";
 import * as React from "react";
 
-interface NotionMagicLinkEmailProps {
-  loginCode?: string;
+interface ConfirmationEmailProps {
+  nickname: string;
 }
 
-export const ConfirmationEmail = ({}: NotionMagicLinkEmailProps) => (
-  <Html>
-    <Head />
-    <Preview>Thanks for reaching out</Preview>
-    <Body style={main}>
-      <Container style={container}>
-        <Heading style={h1}>Hello, John.</Heading>
+const baseUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "";
 
-        <Text
-          style={{
-            ...text,
-            marginTop: "16px",
-          }}
-        >
-          Thanks for reaching out. I will send you a message as soon as I can.
-        </Text>
-      </Container>
-    </Body>
-  </Html>
-);
+export const ConfirmationEmail = ({ nickname }: ConfirmationEmailProps) => {
+  const previewText = `Hey, ${nickname}, Thanks for reaching out.`;
+
+  return (
+    <Html>
+      <Head />
+      <Preview>{previewText}</Preview>
+      <Tailwind>
+        <Body className="bg-white my-auto mx-auto font-sans">
+          <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
+            <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
+              Thank you for reaching out!
+            </Heading>
+            <Text className="text-black text-[14px] leading-[24px]">
+              Hello, {nickname}.
+            </Text>
+            <Text className="text-black text-[14px] leading-[24px]">
+              <Link
+                href="https://brucesalcedo.com"
+                className="text-blue-600 no-underline"
+              >
+                Bruce Salcedo
+              </Link>{" "}
+              has received your message.
+            </Text>
+
+            <Text className="text-black text-[14px] leading-[24px]">
+              You will receive a response shortly. Meanwhile, you can visit my
+              website.
+            </Text>
+
+            <Section className="text-center mt-[32px] mb-[32px]">
+              <Button
+                pX={20}
+                pY={12}
+                className="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center"
+                href="https://brucesalcedo.com"
+              >
+                Visit Website
+              </Button>
+            </Section>
+          </Container>
+        </Body>
+      </Tailwind>
+    </Html>
+  );
+};
 
 export default ConfirmationEmail;
-
-const main = {
-  backgroundColor: "#ffffff",
-};
-
-const container = {
-  paddingLeft: "12px",
-  paddingRight: "12px",
-  margin: "0 auto",
-};
-
-const h1 = {
-  color: "#333",
-  fontFamily:
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-  fontSize: "24px",
-  fontWeight: "bold",
-  margin: "40px 0 0 0",
-  padding: "0",
-};
-
-const link = {
-  color: "#2754C5",
-  fontFamily:
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-  fontSize: "14px",
-  textDecoration: "underline",
-};
-
-const text = {
-  color: "#333",
-  fontFamily:
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-  fontSize: "14px",
-  margin: "24px 0",
-};
-
-const footer = {
-  color: "#898989",
-  fontFamily:
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-  fontSize: "12px",
-  lineHeight: "22px",
-  marginTop: "12px",
-  marginBottom: "24px",
-};
-
-const code = {
-  display: "inline-block",
-  padding: "16px 4.5%",
-  width: "90.5%",
-  backgroundColor: "#f4f4f4",
-  borderRadius: "5px",
-  border: "1px solid #eee",
-  color: "#333",
-};

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactFormSchema } from "@/lib/schema";
 import { useForm } from "react-hook-form";
@@ -16,14 +17,19 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/components/ui/use-toast";
 
-import { titleCase } from "@/lib/utils";
+import { cn, titleCase } from "@/lib/utils";
+import { Loader2 } from "lucide-react";
 
 type FormType = z.infer<typeof contactFormSchema>;
 
 type Props = {};
 
 const ContactForm = ({}: Props) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
   const form = useForm<FormType>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -34,19 +40,38 @@ const ContactForm = ({}: Props) => {
     mode: "onChange",
   });
 
-  function onSubmit(values: FormType) {
+  async function onSubmit(values: FormType) {
+    setIsLoading(true);
     const formattedValues = {
       ...values,
       nickname: titleCase(values.nickname),
     };
 
-    console.log(formattedValues);
+    const res = await fetch("/api/email", {
+      method: "POST",
+      body: JSON.stringify(formattedValues),
+    });
+
+    if (res.status === 200) {
+      setIsLoading(false);
+      toast({
+        title: "Message sent",
+        description:
+          "Thanks for reaching out. You will receive a confirmation email.",
+      });
+    } else {
+      setIsLoading(false);
+      toast({
+        title: "Something went wrong",
+        description: "An error has occurred. Please try again later.",
+      });
+    }
   }
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 max-w-[530px]"
+        className="space-y-4 max-w-[530px]"
       >
         <FormField
           control={form.control}
@@ -92,7 +117,15 @@ const ContactForm = ({}: Props) => {
             </FormItem>
           )}
         />
-        <Button type="submit">Send Message</Button>
+        <Button type="submit" className="flex gap-2" disabled={isLoading}>
+          <Loader2
+            className={cn(
+              "w-[14px] h-[14px] animate-spin",
+              isLoading ? "inline" : "hidden"
+            )}
+          />
+          {isLoading ? "Sending" : "Send Message"}
+        </Button>
       </form>
     </Form>
   );

@@ -3,6 +3,7 @@ import * as z from "zod";
 export const contactFormSchema = z.object({
   email: z
     .string({ required_error: "Email is required." })
+    .nonempty("Email is required.")
     .email("Enter a valid email."),
   nickname: z
     .string({ required_error: "Nickname is required." })
