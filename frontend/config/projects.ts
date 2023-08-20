@@ -51,8 +51,11 @@ export const projects: Record<string, Project> = {
       { label: "Styling", tech: "Tailwind" },
     ],
     links: [
-      { label: "Figma", link: "/" },
-      { label: "Github", link: "/" },
+      {
+        label: "Figma",
+        link: "https://www.figma.com/file/kN00BA9TDNWaN7NTrBE0fY/Team-Space?type=design&node-id=0%3A1&mode=design&t=C7h7Y8S3rOYNuYOd-1",
+      },
+      { label: "Github", link: "https://github.com/codewithbersh/teamspace" },
     ],
     gallery: [
       { img: teamSpaceMockupIphone },
@@ -75,8 +78,11 @@ export const projects: Record<string, Project> = {
       { label: "Styling", tech: "Tailwind" },
     ],
     links: [
-      { label: "Figma", link: "/" },
-      { label: "Github", link: "/" },
+      {
+        label: "Figma",
+        link: "https://www.figma.com/file/SQUrxbvpoqw3QU4yY7okS3/useBrain?type=design&node-id=0%3A1&mode=design&t=zDIB7izQgdy5GNPU-1",
+      },
+      { label: "Github", link: "https://github.com/codewithbersh/useBrain" },
     ],
     gallery: [
       { img: useBrainMockupIphone },
@@ -98,8 +104,14 @@ export const projects: Record<string, Project> = {
       { label: "Styling", tech: "Tailwind" },
     ],
     links: [
-      { label: "Figma", link: "/" },
-      { label: "Github", link: "/" },
+      {
+        label: "Figma",
+        link: "https://www.figma.com/file/W9a6dJBQ37KZvvIBPdAThp/WLE?type=design&node-id=111%3A705&mode=design&t=S4dyY89AgOcn3S9g-1",
+      },
+      {
+        label: "Github",
+        link: "https://github.com/codewithbersh/west-lagoon-estates",
+      },
     ],
     gallery: [
       { img: westLagoonContact },
