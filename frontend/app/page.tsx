@@ -31,7 +31,9 @@ const HomePage = () => {
             <Link href="/contact">Contact</Link>
           </Button>
           <Button variant="ghost">
-            <Link href="https://read.cv/brucesalcedo">Read.cv</Link>
+            <Link href="https://read.cv/brucesalcedo" target="_blank">
+              Read.cv
+            </Link>
           </Button>
         </div>
       </section>

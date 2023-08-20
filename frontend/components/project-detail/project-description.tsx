@@ -28,12 +28,15 @@ const ProjectDescription = ({ project }: Props) => {
         </div>
       </div>
 
-      <div className="aspect-video bg-zinc-100 p-4 sm:px-8 sm:py-16">
+      <div className="bg-zinc-100 p-8">
         <Image
           src={project.heroImage}
           alt={project.title}
-          className=" object-contain w-auto mx-auto max-h-[500px] aspect-video"
+          className="max-h-[500px] object-contain"
           sizes="100vw"
+          priority
+          quality={75}
+          placeholder="blur"
         />
       </div>
 
