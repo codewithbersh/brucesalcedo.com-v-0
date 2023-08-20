@@ -4,13 +4,26 @@ import teamSpaceManageAssignee from "./team-space/ts-manage-assignee.png";
 import teamSpaceTicketInformation from "./team-space/ts-ticket-information.png";
 
 import useBrainMockupIphone from "./use-brain/ub-mockup-iphone.png";
+import useBrainExplore from "./use-brain/ub-explore-page.png";
+import useBrainGameOver from "./use-brain/ub-game-over.png";
+import useBrainMockupDesktop from "./use-brain/ub-mockup-desktop.png";
+
 import westLagoonMockupIpad from "./west-lagoon/wl-mockup-ipad.png";
+import westLagoonContact from "./west-lagoon/wl-contact.png";
+import westLagoonFaqs from "./west-lagoon/wl-faqs.png";
+import westLagoonMockupMac from "./west-lagoon/wl-mockup-mac.png";
 
 export {
   teamSpaceMockupMac,
-  useBrainMockupIphone,
-  westLagoonMockupIpad,
   teamSpaceMockupIphone,
   teamSpaceManageAssignee,
   teamSpaceTicketInformation,
+  useBrainMockupIphone,
+  useBrainExplore,
+  useBrainGameOver,
+  useBrainMockupDesktop,
+  westLagoonMockupIpad,
+  westLagoonContact,
+  westLagoonFaqs,
+  westLagoonMockupMac,
 };

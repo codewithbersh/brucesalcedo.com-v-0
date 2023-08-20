@@ -22,7 +22,15 @@ const ProjectGallery = ({ gallery }: Props) => {
               : "col-span-full sm:col-span-1"
           )}
         >
-          <Image src={image.img} alt="Gallery" />
+          <Image
+            src={image.img}
+            alt="Gallery"
+            className={cn(
+              "object-contain max-h-[400px] ",
+              image.fullSpan ? "aspect-video" : "aspect-square"
+            )}
+            sizes="100vw"
+          />
         </div>
       ))}
     </div>

@@ -19,7 +19,7 @@ const ProjectDescription = ({ project }: Props) => {
             <Link
               className="underline text-muted-foreground underline-offset-2 hover:text-foreground transition-colors duration-300 ease-in-out"
               href={link.link}
-              key={link.link}
+              key={link.label}
               target="_blank"
             >
               {link.label}
@@ -28,18 +28,22 @@ const ProjectDescription = ({ project }: Props) => {
         </div>
       </div>
 
-      <div className="aspect-video bg-zinc-100 px-8 py-16">
+      <div className="aspect-video bg-zinc-100 p-4 sm:px-8 sm:py-16">
         <Image
           src={project.heroImage!}
           alt={project.title}
-          className=" object-contain sm:max-w-full"
+          className=" object-contain w-auto mx-auto max-h-[500px] aspect-video"
           sizes="100vw"
         />
       </div>
 
       <div className="w-fit mx-auto space-y-4 mt-4">
         <p className="max-w-prose">{project.description}</p>
-        <Button>Visit website</Button>
+        <Button asChild>
+          <Link href={project.websiteLink} target="_blank">
+            Visit website
+          </Link>
+        </Button>
       </div>
     </div>
   );

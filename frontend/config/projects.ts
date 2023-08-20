@@ -6,11 +6,18 @@ import {
   teamSpaceMockupIphone,
   teamSpaceManageAssignee,
   teamSpaceTicketInformation,
+  useBrainMockupDesktop,
+  useBrainGameOver,
+  useBrainExplore,
+  westLagoonMockupMac,
+  westLagoonContact,
+  westLagoonFaqs,
 } from "@/public/images";
 
 export type Project = {
   title: string;
   description: string;
+  websiteLink: string;
   fullSpan?: true;
   homeImageDisplay: StaticImageData;
   mobileImageDisplay?: StaticImageData;
@@ -31,9 +38,11 @@ export const projects: Record<string, Project> = {
     title: "Team Space",
     description:
       "A collaborative project management app that boosts teamwork and oversight. It offers secure authentication, user roles, and streamlined ticket management for efficient workflows and effective project development.",
+    websiteLink: "https://teamspace-lac.vercel.app/",
     fullSpan: true,
     homeImageDisplay: teamSpaceMockupMac,
     href: "team-space",
+
     heroImage: teamSpaceMockupMac,
     techStack: [
       { label: "Frontend", tech: "NextJS" },
@@ -53,14 +62,49 @@ export const projects: Record<string, Project> = {
   },
   "use-brain": {
     title: "Usebrain",
-    description: "Interactive quiz platform...",
+    description:
+      "Interactive quiz platform that enables users to create, participate in, and manage quizzes while keeping track of their progress. The platform offers a personalized dashboard, lesson creation, quiz exploration, and post-quiz analytics.",
+    websiteLink: "https://use-brain.vercel.app/",
     homeImageDisplay: useBrainMockupIphone,
     href: "use-brain",
+    heroImage: useBrainMockupDesktop,
+    techStack: [
+      { label: "Frontend", tech: "NextJS" },
+      { label: "Backend", tech: "Django" },
+      { label: "Database", tech: "PostgreSQL" },
+      { label: "Styling", tech: "Tailwind" },
+    ],
+    links: [
+      { label: "Figma", link: "/" },
+      { label: "Github", link: "/" },
+    ],
+    gallery: [
+      { img: useBrainMockupIphone },
+      { img: useBrainGameOver },
+      { img: useBrainExplore, fullSpan: true },
+    ],
   },
   "west-lagoon": {
     title: "West Lagoon",
-    description: "A platform for exploring...",
+    description:
+      "A platform for exploring a diverse range of luxury properties. Users can effortlessly access details about various villas, including pricing, photographs, available amenities, and locations.",
+    websiteLink: "https://www.westlagoonestates.com/",
     homeImageDisplay: westLagoonMockupIpad,
     href: "west-lagoon",
+    heroImage: westLagoonMockupMac,
+    techStack: [
+      { label: "Frontend", tech: "NextJS" },
+      { label: "Email", tech: "SendGrid" },
+      { label: "Styling", tech: "Tailwind" },
+    ],
+    links: [
+      { label: "Figma", link: "/" },
+      { label: "Github", link: "/" },
+    ],
+    gallery: [
+      { img: westLagoonContact },
+      { img: westLagoonMockupIpad },
+      { img: westLagoonFaqs, fullSpan: true },
+    ],
   },
 };
