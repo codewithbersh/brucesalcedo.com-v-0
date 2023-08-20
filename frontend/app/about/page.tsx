@@ -1,10 +1,15 @@
 import { Fragment } from "react";
 import Link from "next/link";
+import { Metadata } from "next";
 
 import { PageWrapper } from "@/components/page-wrapper";
 import { Button } from "@/components/ui/button";
 
 import { aboutConfig } from "@/config/about";
+
+export const metadata: Metadata = {
+  title: "About",
+};
 
 const AboutPage = () => {
   const skills = aboutConfig.skills;

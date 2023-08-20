@@ -1,5 +1,11 @@
+import { Metadata } from "next";
+
 import { ContactForm } from "@/components/contact/contact-form";
 import { PageWrapper } from "@/components/page-wrapper";
+
+export const metadata: Metadata = {
+  title: "Contact",
+};
 
 const ContactPage = () => {
   return (
