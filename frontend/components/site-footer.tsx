@@ -1,7 +1,7 @@
 import Link from "next/link";
+import { ComponentProps } from "react";
 
 import { socialsConfig } from "@/config/socials";
-import { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
 
 type Props = ComponentProps<"footer"> & {
@@ -16,16 +16,19 @@ const SiteFooter = ({ className, ...props }: Props) => {
           <p className="max-w-prose">
             Let&apos;s create something memorable and timeless together.
           </p>
-          <Link href="/" className="w-fit hover:underline underline-offset-4">
+          <Link
+            href="/contact"
+            className="w-fit hover:underline underline-offset-4"
+          >
             hi@bersh.dev
           </Link>
         </div>
 
         <div className="flex gap-4 sm:gap-10 sm:flex-row flex-col">
           <div className="flex gap-10 text-muted-foreground">
-            {socialsConfig.map((social) => (
+            {socialsConfig.map((social, index) => (
               <Link
-                key={social.link}
+                key={index}
                 href={social.link}
                 className="hover:text-foreground transition-colors duration-300 ease-in-out"
               >

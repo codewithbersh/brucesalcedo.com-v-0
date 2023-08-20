@@ -38,7 +38,9 @@ const AboutPage = () => {
               Open to full-time positions and freelance opportunities.
             </span>
           </p>
-          <Button>Get in touch</Button>
+          <Button asChild>
+            <Link href="/contact">Get in touch</Link>
+          </Button>
         </div>
       </section>
 
