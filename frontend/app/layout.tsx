@@ -8,12 +8,20 @@ import { Toaster } from "@/components/ui/toaster";
 
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
+import { siteConfig } from "@/config/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Bruce Salcedo",
-  description: "A full-stack web developer",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  verification: {
+    google: "S5J6W5nKD972peB-ngoxLamABDNjl_BqUYma6HvjfEU",
+  },
 };
 
 export default function RootLayout({
@@ -32,7 +40,7 @@ export default function RootLayout({
         <SiteHeader />
         <div>{children}</div>
         <SiteFooter className="mt-auto" />
-        {/* <Analytics /> */}
+        <Analytics />
         <Toaster />
       </body>
     </html>

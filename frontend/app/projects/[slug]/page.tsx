@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
 import { PageWrapper } from "@/components/page-wrapper";
 import { ProjectDescription } from "@/components/project-detail/project-description";
@@ -14,6 +15,28 @@ type Props = {
     slug: string;
   };
 };
+
+export async function generateMetadata({
+  params: { slug },
+}: Props): Promise<Metadata> {
+  const keys = Object.keys(projects);
+  const key = keys.find((project) => project === slug.toLowerCase());
+  const project = projects[key as keyof typeof projects];
+
+  if (!key)
+    return {
+      title: "Not found",
+      description: "Page does not exist.",
+    };
+
+  return {
+    title: project.title,
+    description: project.description,
+    alternates: {
+      canonical: `/projects/${key}`,
+    },
+  };
+}
 
 const ProjectDetailPage = ({ params: { slug } }: Props) => {
   const keys = Object.keys(projects);
