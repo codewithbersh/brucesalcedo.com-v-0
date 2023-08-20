@@ -25,13 +25,32 @@ const MainNav = ({ routes, className, ...props }: Props) => {
             "text-sm leading-none font-medium hover:text-foreground transition-all duration-300 ease-in-out hover:underline underline-offset-4",
             pathname === route.href
               ? "text-foreground"
-              : "text-muted-foreground",
-            route.href === "/contact" && "ml-auto"
+              : "text-muted-foreground"
           )}
         >
           {route.label}
         </Link>
       ))}
+
+      <Link
+        href="/contact"
+        className={cn(
+          "text-sm leading-none font-medium hover:text-foreground transition-all duration-300 ease-in-out hover:underline underline-offset-4 ml-auto md:hidden",
+          pathname === "/contact" ? "text-foreground" : "text-muted-foreground"
+        )}
+      >
+        Contact
+      </Link>
+
+      <Link
+        href="/contact"
+        className={cn(
+          "text-sm leading-none font-medium hover:text-foreground transition-all duration-300 ease-in-out hover:underline underline-offset-4 ml-auto hidden md:inline",
+          pathname === "/contact" ? "text-foreground" : "text-muted-foreground"
+        )}
+      >
+        hello@brucesalcedo.com
+      </Link>
     </nav>
   );
 };

@@ -1,8 +1,9 @@
-import Link from "next/link";
 import { Fragment } from "react";
+import Link from "next/link";
 
 import { PageWrapper } from "@/components/page-wrapper";
 import { Button } from "@/components/ui/button";
+
 import { aboutConfig } from "@/config/about";
 
 const AboutPage = () => {
@@ -14,8 +15,9 @@ const AboutPage = () => {
         <div className=" md:col-span-1">
           <h1 className="font-bold">About Bruce</h1>
           <Link
-            href="/"
+            href="https://read.cv/brucesalcedo"
             className="italic text-muted-foreground underline underline-offset-2 hover:text-foreground transition-colors duration-300 ease-in-out"
+            target="_blank"
           >
             Read.cv
           </Link>

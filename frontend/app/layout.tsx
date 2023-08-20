@@ -26,7 +26,7 @@ export default function RootLayout({
       <body
         className={cn(
           inter.className,
-          "min-h-screen bg-background antialiased pt-[48px] flex flex-col"
+          "min-h-screen bg-background antialiased pt-[50px] flex flex-col"
         )}
       >
         <SiteHeader />

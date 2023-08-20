@@ -30,7 +30,9 @@ const HomePage = () => {
           <Button asChild>
             <Link href="/contact">Contact</Link>
           </Button>
-          <Button variant="ghost">Read.cv</Button>
+          <Button variant="ghost">
+            <Link href="https://read.cv/brucesalcedo">Read.cv</Link>
+          </Button>
         </div>
       </section>
       <ProjectsList projects={projects} />

@@ -7,8 +7,4 @@ export const routesConfig = [
     label: "About",
     href: "/about",
   },
-  {
-    label: "hi@bersh.dev",
-    href: "/contact",
-  },
 ];

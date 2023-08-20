@@ -1,14 +1,14 @@
 export const socialsConfig = [
   {
     label: "Github",
-    link: "/",
+    link: "https://github.com/codewithbersh",
   },
   {
     label: "Read.cv",
-    link: "/",
+    link: "https://read.cv/brucesalcedo",
   },
-  {
-    label: "Linkdn",
-    link: "/",
-  },
+  // {
+  //   label: "Linkdn",
+  //   link: "/",
+  // },
 ];

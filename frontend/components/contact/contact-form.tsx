@@ -59,6 +59,7 @@ const ContactForm = ({}: Props) => {
         description:
           "Thanks for reaching out. You will receive a confirmation email.",
       });
+      form.reset();
     } else {
       setIsLoading(false);
       toast({

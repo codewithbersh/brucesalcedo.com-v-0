@@ -20,7 +20,7 @@ const SiteFooter = ({ className, ...props }: Props) => {
             href="/contact"
             className="w-fit hover:underline underline-offset-4"
           >
-            hi@bersh.dev
+            hello@brucesalcedo.com
           </Link>
         </div>
 
@@ -31,6 +31,7 @@ const SiteFooter = ({ className, ...props }: Props) => {
                 key={index}
                 href={social.link}
                 className="hover:text-foreground transition-colors duration-300 ease-in-out"
+                target="_blank"
               >
                 {social.label}
               </Link>
