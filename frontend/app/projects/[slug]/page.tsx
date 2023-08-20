@@ -1,13 +1,13 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageWrapper } from "@/components/page-wrapper";
 import { ProjectDescription } from "@/components/project-detail/project-description";
 import { ProjecTechStack } from "@/components/project-detail/project-tech-stack";
 import { ProjectGallery } from "@/components/project-detail/project-gallery";
+import { Button } from "@/components/ui/button";
 
 import { projects } from "@/config/projects";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 type Props = {
   params: {
