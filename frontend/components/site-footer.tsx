@@ -21,7 +21,7 @@ const SiteFooter = ({ className, ...props }: Props) => {
           </Link>
         </div>
 
-        <div className="flex gap-10">
+        <div className="flex gap-4 sm:gap-10 sm:flex-row flex-col">
           <div className="flex gap-10 text-muted-foreground">
             {socialsConfig.map((social) => (
               <Link
@@ -33,7 +33,7 @@ const SiteFooter = ({ className, ...props }: Props) => {
               </Link>
             ))}
           </div>
-          <p className="ml-auto">© 2023 Bruce Salcedo</p>
+          <p className="sm:ml-auto">© 2023 Bruce Salcedo</p>
         </div>
       </div>
     </footer>

@@ -25,8 +25,8 @@ const ProjectDetailPage = ({ params: { slug } }: Props) => {
   return (
     <PageWrapper>
       <ProjectDescription project={project} />
-      <ProjecTechStack techStack={project.techStack!} />
-      <ProjectGallery gallery={project.gallery!} />
+      <ProjecTechStack techStack={project.techStack} />
+      <ProjectGallery gallery={project.gallery} />
     </PageWrapper>
   );
 };

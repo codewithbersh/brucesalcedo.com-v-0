@@ -22,10 +22,10 @@ export type Project = {
   homeImageDisplay: StaticImageData;
   mobileImageDisplay?: StaticImageData;
   href: string;
-  heroImage?: StaticImageData;
-  techStack?: Array<{ label: string; tech: string }>;
-  links?: Array<{ label: string; link: string }>;
-  gallery?: GalleryItem[];
+  heroImage: StaticImageData;
+  techStack: Array<{ label: string; tech: string }>;
+  links: Array<{ label: string; link: string }>;
+  gallery: GalleryItem[];
 };
 
 export type GalleryItem = {
