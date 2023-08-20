@@ -18,6 +18,14 @@ export const metadata: Metadata = {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
   },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+  },
   description: siteConfig.description,
   verification: {
     google: "S5J6W5nKD972peB-ngoxLamABDNjl_BqUYma6HvjfEU",
