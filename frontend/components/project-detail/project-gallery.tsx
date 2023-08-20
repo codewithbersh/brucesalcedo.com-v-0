@@ -16,7 +16,7 @@ const ProjectGallery = ({ gallery }: Props) => {
         <div
           key={index}
           className={cn(
-            "bg-zinc-100 aspect-square grid place-items-center px-8",
+            "bg-zinc-100 aspect-square flex items-center justify-center px-8",
             image.fullSpan
               ? "col-span-full sm:aspect-video sm:py-8"
               : "col-span-full sm:col-span-1"

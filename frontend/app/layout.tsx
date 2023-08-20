@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { Raleway } from "next/font/google";
+import { Inter } from "next/font/google";
 
 import { SiteHeader } from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
@@ -8,7 +8,7 @@ import SiteFooter from "@/components/site-footer";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 
-const raleway = Raleway({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Bruce Salcedo",
@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          raleway.className,
+          inter.className,
           "min-h-screen bg-background antialiased pt-[48px] flex flex-col"
         )}
       >
