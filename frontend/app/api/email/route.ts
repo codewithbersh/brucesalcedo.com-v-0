@@ -12,14 +12,14 @@ export async function POST(request: Request) {
     await resend.sendEmail({
       from: "hello@brucesalcedo.com",
       to: email,
-      subject: "Bruce Salcedo | Thanks for reaching out",
+      subject: "Thanks for reaching out | Bruce Salcedo",
       react: ConfirmationEmail({ nickname }),
     });
 
     await resend.sendEmail({
-      from: "hello@brucesalcedo.com",
-      to: "brucesalcedo.programming@gmail.com",
-      subject: "Bruce Salcedo | Someone sent you a message",
+      from: "contact@brucesalcedo.com",
+      to: "hello@brucesalcedo.com",
+      subject: `Contact Request | ${nickname} sent a message`,
       react: NotificationEmail({ nickname, email, message }),
     });
 

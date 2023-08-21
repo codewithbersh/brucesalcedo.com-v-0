@@ -21,10 +21,6 @@ interface ConfirmationEmailProps {
   nickname: string;
 }
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "";
-
 export const ConfirmationEmail = ({ nickname }: ConfirmationEmailProps) => {
   const previewText = `Hey, ${nickname}, Thanks for reaching out.`;
 
