@@ -55,9 +55,7 @@ export default function RootLayout({
 
         <Script type="text/javascript" id="mouseflow">
           {
-            //@ts-ignore
             (window._mfq =
-              //@ts-ignore
               window._mfq ||
               //@ts-ignore
               [](function () {
