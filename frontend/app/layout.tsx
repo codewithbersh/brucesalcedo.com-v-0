@@ -54,15 +54,21 @@ export default function RootLayout({
         <Toaster />
 
         <Script type="text/javascript" id="mouseflow">
-          {`
-            window._mfq = window._mfq || [];
-            (function() {
-              var mf = document.createElement("script");
-              mf.type = "text/javascript"; mf.defer = true;
-              mf.src = "//cdn.mouseflow.com/projects/2841e11f-c0d9-4a7b-9168-636260487134.js";
-              document.getElementsByTagName("head")[0].appendChild(mf);
-            })();
-          `}
+          {
+            //@ts-ignore
+            (window._mfq =
+              //@ts-ignore
+              window._mfq ||
+              //@ts-ignore
+              [](function () {
+                var mf = document.createElement("script");
+                mf.type = "text/javascript";
+                mf.defer = true;
+                mf.src =
+                  "//cdn.mouseflow.com/projects/2841e11f-c0d9-4a7b-9168-636260487134.js";
+                document.getElementsByTagName("head")[0].appendChild(mf);
+              })())
+          }
         </Script>
       </body>
     </html>
