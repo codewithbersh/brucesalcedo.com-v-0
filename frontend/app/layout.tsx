@@ -53,7 +53,7 @@ export default function RootLayout({
         <Analytics />
         <Toaster />
 
-        <Script type="text/javascript">
+        <Script type="text/javascript" id="mouseflow">
           {`
             window._mfq = window._mfq || [];
             (function() {
