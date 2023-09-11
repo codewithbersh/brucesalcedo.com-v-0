@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import { siteConfig } from "@/config/site";
 
-import Script from "next/script";
+import { MouseFlow } from "@/components/mouse-flow";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,18 +52,7 @@ export default function RootLayout({
         <SiteFooter className="mt-auto" />
         <Analytics />
         <Toaster />
-
-        <Script type="text/javascript" id="mouse-flow">
-          {`
-    window._mfq = window._mfq || []
-  (function() {
-    var mf = document.createElement("script");
-    mf.type = "text/javascript"; mf.defer = true;
-    mf.src = "//cdn.mouseflow.com/projects/0c7cceb2-431f-4179-8d03-f76348714add.js";
-    document.getElementsByTagName("head")[0].appendChild(mf);
-  })()
-    `}
-        </Script>
+        <MouseFlow />
       </body>
     </html>
   );
