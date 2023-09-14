@@ -29,7 +29,9 @@ const ProjectsList = ({ projects }: Props) => {
               <div className="col-span-full md:col-span-6 space-y-4">
                 <h1 className="font-semibold">{project.title}</h1>
                 <p className="max-w-prose md:pr-8">{project.description}</p>
-                <Button variant="outline">Learn more</Button>
+                <Link href={`/projects/${project.href}`} passHref>
+                  <Button className="mt-4">Learn more</Button>
+                </Link>
               </div>
               <Link
                 className="col-span-full md:col-span-6"
@@ -73,7 +75,7 @@ const ProjectsList = ({ projects }: Props) => {
                   />
                 </div>
               </Link>
-              <div className="max-w-fit mx-auto space-y-4 mt-8">
+              <div className="max-w-fit mx-auto flex flex-col mt-8 gap-4">
                 <p className="max-w-prose">{project.description}</p>
                 <Link href={`/projects/${project.href}`} passHref>
                   <Button>Learn more</Button>
