@@ -75,7 +75,9 @@ const ProjectsList = ({ projects }: Props) => {
               </Link>
               <div className="max-w-fit mx-auto space-y-4 mt-8">
                 <p className="max-w-prose">{project.description}</p>
-                <Button variant="outline">Learn more</Button>
+                <Link href={`/projects/${project.href}`} passHref>
+                  <Button>Learn more</Button>
+                </Link>
               </div>
             </div>
           </>
