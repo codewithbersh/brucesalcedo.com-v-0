@@ -6,6 +6,7 @@ type SkillType = {
 type NextProjectType = {
   label: string;
   description: string;
+  href: string;
 };
 
 type AboutConfigType = {
@@ -28,18 +29,25 @@ export const aboutConfig: AboutConfigType = {
       tech: ["CSS", "Tailwind", "Sass"],
     },
     {
+      label: "ORM",
+      tech: ["Prisma"],
+    },
+    {
       label: "Project Management",
       tech: ["Figma", "Notion"],
     },
   ],
   nextProjects: [
     {
-      label: "Online Store",
-      description: "E-commerce store and dashboard with payment integration",
+      label: "tinychanges.me",
+      description:
+        "A habit tracker inspired by the book Atomic Habits by James Clear.",
+      href: "https://tinychanges.me",
     },
     {
-      label: "Chatbot",
-      description: "AI Chatbot powered by OpenAi",
+      label: "tracker.lol",
+      description: "A personal finance tracker.",
+      href: "https://tracker.lol",
     },
   ],
 };
