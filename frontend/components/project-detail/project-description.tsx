@@ -15,7 +15,7 @@ const ProjectDescription = ({ project }: Props) => {
       <div className="flex gap-8 ">
         <h1 className="font-bold">{project.title}</h1>
         <div className="flex gap-8 ml-auto">
-          {project.links.map((link) => (
+          {project.links?.map((link) => (
             <Link
               className="underline text-muted-foreground underline-offset-2 hover:text-foreground transition-colors duration-300 ease-in-out"
               href={link.link}

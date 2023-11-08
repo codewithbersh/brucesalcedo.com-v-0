@@ -12,7 +12,13 @@ import {
   westLagoonMockupMac,
   westLagoonContact,
   westLagoonFaqs,
+  trackerMockup,
+  trackerOne,
 } from "@/public/images";
+
+import opengraph from "@/public/tracker/opengraph.jpg";
+import iphone14dark from "@/public/tracker/iphone14.png";
+import iphone14light from "@/public/tracker/iphone14-light.png";
 
 export type Project = {
   title: string;
@@ -24,7 +30,7 @@ export type Project = {
   href: string;
   heroImage: StaticImageData;
   techStack: Array<{ label: string; tech: string }>;
-  links: Array<{ label: string; link: string }>;
+  links?: Array<{ label: string; link: string }>;
   gallery: GalleryItem[];
 };
 
@@ -34,12 +40,33 @@ export type GalleryItem = {
 };
 
 export const projects: Record<string, Project> = {
+  tracker: {
+    title: "TRACKER.LOL",
+    description:
+      "A personal web finance application built with modern web technologies, using a full-stack serverless approach.",
+    websiteLink: "https://www.tracker.lol/",
+    fullSpan: true,
+    homeImageDisplay: trackerMockup,
+    href: "tracker",
+
+    heroImage: trackerMockup,
+    techStack: [
+      { label: "Framework", tech: "NextJS" },
+      { label: "ORM", tech: "Prisma" },
+      { label: "Database", tech: "PostgreSQL" },
+      { label: "API", tech: "tRPC" },
+    ],
+    gallery: [
+      { img: iphone14light },
+      { img: iphone14dark },
+      { img: opengraph, fullSpan: true },
+    ],
+  },
   "team-space": {
     title: "Team Space",
     description:
       "A collaborative project management app that boosts teamwork and oversight. It offers secure authentication, user roles, and streamlined ticket management for efficient workflows and effective project development.",
     websiteLink: "https://teamspace-lac.vercel.app/",
-    fullSpan: true,
     homeImageDisplay: teamSpaceMockupMac,
     href: "team-space",
 

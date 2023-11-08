@@ -13,6 +13,9 @@ import westLagoonContact from "./west-lagoon/wl-contact.png";
 import westLagoonFaqs from "./west-lagoon/wl-faqs.png";
 import westLagoonMockupMac from "./west-lagoon/wl-mockup-mac.png";
 
+import trackerMockup from "./tracker/mockup.png";
+import trackerOne from "./tracker/1.png";
+
 export {
   teamSpaceMockupMac,
   teamSpaceMockupIphone,
@@ -26,4 +29,6 @@ export {
   westLagoonContact,
   westLagoonFaqs,
   westLagoonMockupMac,
+  trackerMockup,
+  trackerOne,
 };
