@@ -74,7 +74,7 @@ const AboutPage = () => {
 
       <section className="col-span-full grid grid-cols-1 gap-8 md:grid-cols-2">
         <div className=" md:col-span-1">
-          <h1 className="font-medium">What I'm currently building</h1>
+          <h1 className="font-medium">What I&apos;m currently building</h1>
         </div>
         <div className="space-y-8 md:col-span-1">
           {nextProjects.map((project) => (
